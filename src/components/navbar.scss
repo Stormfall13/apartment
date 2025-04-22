@@ -1,0 +1,13 @@
+@import '../variables';
+
+.navbar{
+    display: flex;
+    gap: 15px;
+    a{
+        @include roboto-black();
+        transition: 0.6s;
+    }
+    a:hover{
+        color: var(--main-color);
+    }
+}

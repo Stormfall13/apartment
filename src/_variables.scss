@@ -1,0 +1,74 @@
+:root{
+    --roboto-font: 'Roboto', sans-serif;
+    --main-color: #DA5C5C;
+    --second-color: #2D4872;
+    --text-black-color: #171616;
+    --text-brown-color: #595959;
+    --text-white-color: #fff;
+    --tab-unactive-color: #E6E6E6;
+    --thin: 100;
+    --extra-light: 200;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --black: 900;
+}
+
+@mixin content__width {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@mixin flex__flex-wrapp {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin roboto-black {
+    font-family: var(--roboto-font);
+    color: var(--text-black-color);
+}
+
+@mixin section__title-style{
+    font-family: var(--roboto-font);
+    color: var(--text-black-color);
+    font-size: 42px;
+    max-width: 470px;
+    margin: 0 auto; 
+    padding: 50px 0;
+}
+
+@mixin input__styled {
+    input{
+        font-family: var(--roboto-font);
+        font-weight: var(--regular);
+        font-size: 14px;
+        color: var(--text-brown-color);
+        border: 1px solid #CCCCCC;
+        border-radius: 3px;
+        padding: 15px 41px 15px 7px;
+        outline: none;
+    }
+    input::placeholder{
+        font-family: var(--roboto-font);
+        font-weight: var(--regular);
+        font-size: 14px;
+        color: var(--text-brown-color);
+    } 
+}
+
+@mixin btn__red-styled{
+    font-family: var(--roboto-font);
+    font-weight: var(--bold);
+    font-size: 18px;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+    background: var(--main-color);
+    color: var(--text-white-color); 
+    cursor: pointer;
+}
