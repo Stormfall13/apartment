@@ -5,6 +5,8 @@ import HeaderMobile from '../components/HeaderMobile';
 import SectionBulding from '../components/SectionBuilding';
 import SectionPriceBuild from '../components/SectionPriceBuild';
 import SectionWeWork from '../components/SectionWeWork';
+import SectionHowWork from '../components/SectionHowWork';
+import SectionAdvantage from '../components/SectionAdvantage';
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
@@ -24,6 +26,8 @@ const Home = () => {
             <SectionBulding />
             <SectionPriceBuild />
             <SectionWeWork />
+            <SectionHowWork />
+            <SectionAdvantage />
         </div>
     )
 }

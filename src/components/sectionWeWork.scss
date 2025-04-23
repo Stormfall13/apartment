@@ -60,6 +60,7 @@
         height: 58px;
         cursor: pointer;
         border-radius: 4px;
+        border: 2px solid transparent;
     }
     .thumb.active {
         border: 2px solid var(--text-brown-color);

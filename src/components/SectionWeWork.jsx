@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 
 import './sectionWeWork.css';
 
-import bg1 from '../assets/bg1.png';
-import bg2 from '../assets/bg2.jpg';
-import bg3 from '../assets/bg3.jpg';
-import bg4 from '../assets/bg4.jpg';
 
 import dollarSign from '../assets/dollar-sign.svg';
 import grid from '../assets/grid.svg';
@@ -14,92 +10,11 @@ import home from '../assets/home.svg';
 import mapPin from '../assets/map-pin.svg';
 import fileText from '../assets/file-text.svg';
 
+import tabData from './tabData';
+
 const SectionWeWork = () => {
 
-    // const tabTitles = ['Капитальный', 'Косметический', 'Под ключ', 'Студии', 'Черновой'];
-    const tabData = [
-        {
-            title: 'Капитальный',
-            options: [
-                {
-                id: 1,
-                    area: '55м²',
-                    mainImage: bg1,
-                    thumbnails: [
-                        bg2,
-                        bg3,
-                        bg4,
-                    ],
-                    description: {
-                        price: '1 200 000 ₽',
-                        area: '55м²',
-                        time: '60 дней',
-                        rooms: '2 комнаты',
-                        address: 'Примерная, 5',
-                        workList: 'Демонтаж, выравнивание стен, плитка и т.д.'
-                    }
-                },
-                {
-                    id: 2,
-                    area: '61м²',
-                    mainImage: bg1,
-                    thumbnails: [
-                        bg2,
-                        bg3,
-                    ],
-                    description: {
-                        price: '1 800 000 ₽',
-                        area: '72м²',
-                        time: '80 дней',
-                        rooms: '3 комнаты',
-                        address: 'Образцовая, 2',
-                        workList: 'Полный капитальный ремонт под ключ'
-                    }
-                }
-            ]
-        },
-        {
-            title: 'Косметический',
-            options: [
-                {
-                id: 1,
-                    area: '55м²',
-                    mainImage: bg1,
-                    thumbnails: [
-                        bg2,
-                        bg3,
-                        bg4,
-                    ],
-                    description: {
-                        price: '1 200 000 ₽',
-                        area: '55м²',
-                        time: '60 дней',
-                        rooms: '2 комнаты',
-                        address: 'Примерная, 5',
-                        workList: 'Демонтаж, выравнивание стен, плитка и т.д.'
-                    }
-                },
-                {
-                    id: 2,
-                    area: '61м²',
-                    mainImage: bg1,
-                    thumbnails: [
-                        bg2,
-                        bg3,
-                    ],
-                    description: {
-                        price: '1 800 000 ₽',
-                        area: '72м²',
-                        time: '80 дней',
-                        rooms: '3 комнаты',
-                        address: 'Образцовая, 2',
-                        workList: 'Полный капитальный ремонт под ключ'
-                    }
-                }
-            ]
-        },
-        // остальные вкладки добавишь аналогично
-    ];
+
 
     const [activeTab, setActiveTab] = useState(0);
     const [selectedAreaIndex, setSelectedAreaIndex] = useState(0);
