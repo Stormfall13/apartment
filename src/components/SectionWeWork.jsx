@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import './sectionWeWork.css';
-
 
 import dollarSign from '../assets/dollar-sign.svg';
 import grid from '../assets/grid.svg';

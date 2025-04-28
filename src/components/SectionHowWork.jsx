@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './sectionHowWork.css';
 
 import wework1 from '../assets/wework1.png';
 import wework2 from '../assets/wework2.png';

@@ -7,6 +7,7 @@ import SectionPriceBuild from '../components/SectionPriceBuild';
 import SectionWeWork from '../components/SectionWeWork';
 import SectionHowWork from '../components/SectionHowWork';
 import SectionAdvantage from '../components/SectionAdvantage';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
@@ -28,6 +29,7 @@ const Home = () => {
             <SectionWeWork />
             <SectionHowWork />
             <SectionAdvantage />
+            <Footer />
         </div>
     )
 }

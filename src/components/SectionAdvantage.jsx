@@ -5,7 +5,6 @@ import ad2 from '../assets/ad2.png';
 import ad3 from '../assets/ad3.png';
 import ad4 from '../assets/ad4.png';
 
-import './sectionAdvantage.css';
 
 const SectionAdvantage = () => {
 

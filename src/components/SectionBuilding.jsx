@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './sectionBuilding.css';
 
 import weWork1 from '../assets/wework7.png';
 import weWork2 from '../assets/wework2.png';

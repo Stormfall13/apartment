@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './sectionPrice.css';
+import React, { useState, useRef } from 'react';
 
 import check from '../assets/check.svg';
 import arrowDown from '../assets/arrow-down.png';
@@ -22,7 +21,7 @@ const SectionPriceBuild = () => {
         if (!ref) return '170px';
         return openIndexes[index] ? `${ref.scrollHeight}px` : '170px';
     };
-    // transform: rotate(180deg)
+    
     return (
         <section className='price__build'>
             <h2 className='title__build'>Цены на ремонт</h2>
