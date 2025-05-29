@@ -702,5 +702,8 @@ p{
 
 
 .footer{
-    
+    background: var(--second-color);
+    &__wrapp{
+        @include content__width();
+    }
 }

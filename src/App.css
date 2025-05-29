@@ -818,4 +818,13 @@ p {
   font-size: 14px;
   font-weight: var(--regular);
   color: var(--text-brown-colo);
+}
+
+.footer {
+  background: var(--second-color);
+}
+.footer__wrapp {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }/*# sourceMappingURL=App.css.map */
