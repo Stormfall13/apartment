@@ -704,6 +704,28 @@ p{
 .footer{
     background: var(--second-color);
     &__wrapp{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px; 
         @include content__width();
+    }
+    .social__wrapp{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-width: 200px;
+        .link__social{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            padding: 5px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
 }

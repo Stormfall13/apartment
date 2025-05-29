@@ -1,21 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import vk from '../assets/vkontakte.svg';
+import tg from '../assets/telegram.svg';
+import whatsapp from '../assets/whatsapp.svg';
+
 
 const Footer = () => {
 
-
+    const dataSocialLink = [
+        {
+            id: 1,
+            imgSocial: vk,
+            linkSocial: '#',
+        },
+        {
+            id: 1,
+            imgSocial: tg,
+            linkSocial: '#',
+        },
+        {
+            id: 1,
+            imgSocial: whatsapp,
+            linkSocial: '#',
+        },
+    ]
 
     return (
         <footer className='footer'>
             <div className="footer__wrapp">
-                <div className="column__first">
-                    <Link to="/">
-                        LOGO
-                    </Link>
+                <p className="copyright">&copy; Копирайт компании</p>
+                <div className="social__wrapp">
+                    {dataSocialLink.map((item) => {
+                        return (
+                            <a href={item.linkSocial} key={item.id} className='link__social'>
+                                <img src={item.imgSocial} alt="img social" />
+                            </a> 
+                        )
+                    })}
                 </div>
-                <nav className='menu__column-second'>
-                    <h3 className='title'>НАШИ УСЛУГИ</h3>
-                </nav>
+                <p className="offert__text">
+                Сайт не является публичной офертой и носит информационный характер
+                </p>
             </div>
         </footer>
     )

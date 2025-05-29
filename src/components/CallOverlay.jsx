@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { closeOverlay } from "../store/slices/callOverlaySlice";
-import './header.css';
+
 
 import close from '../assets/close.svg';
 
