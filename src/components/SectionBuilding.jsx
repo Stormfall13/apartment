@@ -83,7 +83,7 @@ const SectionBulding = () => {
                             <label
                             htmlFor={`repair-${type}`}
                             style={{
-                                color: repairType === type ? '#2D4872' : '#595959',
+                                color: repairType === type ? '#c7a772' : '#fff',
                                 padding: '4px 8px',
                                 borderRadius: '6px',
                                 cursor: 'pointer',
@@ -113,7 +113,7 @@ const SectionBulding = () => {
                             <label
                             htmlFor={`property-${type}`}
                             style={{
-                                color: propertyType === type ? '#2D4872' : '#595959',
+                                color: propertyType === type ? '#c7a772' : '#fff',
                                 padding: '4px 8px',
                                 borderRadius: '6px',
                                 cursor: 'pointer',
@@ -143,7 +143,7 @@ const SectionBulding = () => {
                             <label
                             htmlFor={`room-${count}`}
                             style={{
-                                color: roomCount === count ? '#2D4872' : '#595959',
+                                color: roomCount === count ? '#c7a772' : '#fff',
                                 padding: '4px 8px',
                                 borderRadius: '6px',
                                 cursor: 'pointer',
