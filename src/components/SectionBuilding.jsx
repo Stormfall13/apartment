@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import weWork1 from '../assets/wework7.png';
-import weWork2 from '../assets/wework2.png';
-import weWork3 from '../assets/wework1.png';
-import weWork4 from '../assets/wework8.png';
+import weWork1 from '../assets/wework7.svg';
+import weWork2 from '../assets/wework2.svg';
+import weWork3 from '../assets/wework1.svg';
+import weWork4 from '../assets/wework8.svg';
 import bg1 from '../assets/bg1.png';
 
 const SectionBulding = () => {

@@ -23,7 +23,7 @@ const SectionPriceBuild = () => {
     };
     
     return (
-        <section className='price__build'>
+        <section className='price__build' id='price__build'>
             <h2 className='title__build'>Цены на ремонт</h2>
             <div className="main__price-wrapp">
                 {dataServices.map((serviceBlock, index) => {

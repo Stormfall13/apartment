@@ -27,8 +27,8 @@ const Home = () => {
             <SectionBulding />
             <SectionPriceBuild />
             <SectionWeWork />
-            <SectionHowWork />
             <SectionAdvantage />
+            <SectionHowWork />
             <Footer />
         </div>
     )

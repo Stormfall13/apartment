@@ -32,7 +32,7 @@ const SectionWeWork = () => {
 
 
     return (
-        <section className='section__wework'>
+        <section className='section__wework' id="section__wework">
         <h2 className='title__wework'>Примеры наших работ</h2>
 
         <div className="tabs">

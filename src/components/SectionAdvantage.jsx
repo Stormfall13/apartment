@@ -37,7 +37,7 @@ const SectionAdvantage = () => {
 
 
     return (
-        <section className='advantage'>
+        <section className='advantage' id="advantage">
             <h2 className='advantage__title'>Наши преимущества</h2>
             <div className="advantage__wrapp">
                 {dataAdvantage.map((advantageItem) => {

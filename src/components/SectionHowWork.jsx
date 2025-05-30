@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-import wework1 from '../assets/wework1.png';
-import wework2 from '../assets/wework2.png';
-import wework3 from '../assets/wework3.png';
-import wework4 from '../assets/wework4.png';
-import wework5 from '../assets/wework5.png';
-import wework6 from '../assets/wework6.png';
-import wework7 from '../assets/wework7.png';
-import wework8 from '../assets/wework8.png';
+import wework1 from '../assets/wework1.svg';
+import wework2 from '../assets/wework2.svg';
+import wework3 from '../assets/wework3.svg';
+import wework4 from '../assets/wework4.svg';
+import wework5 from '../assets/wework5.svg';
+import wework6 from '../assets/wework6.svg';
+import wework7 from '../assets/wework7.svg';
+import wework8 from '../assets/wework8.svg';
 
 
 
