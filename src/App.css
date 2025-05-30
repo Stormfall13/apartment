@@ -22,6 +22,10 @@
   --black: 900;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -851,6 +855,8 @@ p {
 .footer {
   background: var(--second-color);
   padding: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 .footer__wrapp {
   display: flex;
@@ -861,6 +867,7 @@ p {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  max-width: 630px;
 }
 .footer .copyright {
   font-family: var(--roboto-font);
@@ -891,4 +898,21 @@ p {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.footer .footer__menu {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer__menu a {
+  font-family: var(--roboto-font);
+  color: var(--text-black-color);
+  font-weight: var(--regular);
+  color: #111;
+  font-weight: var(--medium);
 }/*# sourceMappingURL=App.css.map */

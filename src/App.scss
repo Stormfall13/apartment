@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import './variables';
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -725,6 +728,8 @@ p{
 .footer{
     background: var(--second-color);
     padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
     &__wrapp{
         display: flex;
         flex-wrap: wrap;
@@ -732,6 +737,7 @@ p{
         justify-content: space-between;
         gap: 10px; 
         @include content__width();
+        max-width: 630px;
     }
     .copyright{
         @include roboto-black();
@@ -758,6 +764,21 @@ p{
                 height: 100%;
                 object-fit: contain;
             }
+        }
+    }
+    .footer__menu{
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        @include flex__flex-wrapp();
+        align-items: center;
+        justify-content: space-between;
+        a{
+            @include roboto-black();
+            font-weight: var(--regular);
+            color: #111;
+            font-weight: var(--medium);
         }
     }
 }
