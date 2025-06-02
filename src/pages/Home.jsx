@@ -8,6 +8,7 @@ import SectionWeWork from '../components/SectionWeWork';
 import SectionHowWork from '../components/SectionHowWork';
 import SectionAdvantage from '../components/SectionAdvantage';
 import Footer from '../components/Footer';
+import HomeGallery from '../components/HomeGallery';
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
@@ -27,6 +28,7 @@ const Home = () => {
             <SectionBulding />
             <SectionPriceBuild />
             <SectionWeWork />
+            <HomeGallery />
             <SectionAdvantage />
             <SectionHowWork />
             <Footer />

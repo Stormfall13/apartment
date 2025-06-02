@@ -628,6 +628,107 @@ p{
     }
 }
 
+// ########## SECTION GALLERY ######### //
+
+.home__gallery{
+    @include content__width();
+    .gallery__title{
+        @include section__title-style();
+        text-align: center;
+    }
+    .gallery__grid {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .gallery__item {
+        max-width: 600px;
+        cursor: pointer;
+        .gallery__image{
+            max-width: 600px;
+            max-height: 355px;
+            overflow: hidden;
+            border-radius: 3px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        h3{
+            @include roboto-black();
+            margin: 10px 0;
+        }
+        p{
+            @include roboto-black();
+        }
+    }
+
+    .gallery__overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        overflow-y: scroll;
+    }
+
+    .gallery__popup {
+        background: var(--bg-black-color);
+        padding: 32px;
+        position: relative;
+        max-width: 800px;
+        width: 100%;
+        border-radius: 3px;
+        text-align: center;
+        border: 1px solid var(--main-color);
+    }
+
+    .gallery__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .look__wrapp{
+        max-width: 800px;
+        max-height: 800px;
+        overflow: hidden;
+        .gallery__large {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .gallery__thumbs {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .gallery__thumb {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .gallery__thumb.active {
+        border-color: #000;
+    }
+}
+
 // ######## SECTION HOW WORK ######## //
 
 .how__work{

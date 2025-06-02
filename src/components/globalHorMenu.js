@@ -6,7 +6,7 @@ const globalHorMenu = [
     },
     {
         id: 2,
-        linkName: 'Примеры работ',
+        linkName: 'Наши проекты',
         link: '#section__wework',
     },
     {
@@ -16,13 +16,8 @@ const globalHorMenu = [
     },
     {
         id: 4,
-        linkName: 'Блог',
-        link: '',
-    },
-    {
-        id: 5,
-        linkName: 'Контакты',
-        link: '',
+        linkName: 'Галерея',
+        link: '#home__gallery',
     },
 ]
 

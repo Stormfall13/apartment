@@ -33,7 +33,7 @@ const SectionWeWork = () => {
 
     return (
         <section className='section__wework' id="section__wework">
-        <h2 className='title__wework'>Примеры наших работ</h2>
+        <h2 className='title__wework'>Наши проекты</h2>
 
         <div className="tabs">
         <div className="tab__titles">
