@@ -9,8 +9,17 @@ const SectionPriceBuild = () => {
     const [openIndexes, setOpenIndexes] = useState({});
     const contentRefs = useRef([]);
 
+    const [mobileSpoiler, setMobileSpoiler] = useState(false);
+
     const toggleSpoiler = (index) => {
         setOpenIndexes((prev) => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
+    const toggleMobileSpoiler = (index) => {
+        setMobileSpoiler((prev) => ({
             ...prev,
             [index]: !prev[index]
         }));
@@ -32,14 +41,18 @@ const SectionPriceBuild = () => {
                             <div className="services__wrapper-header">
                                 <p className="services__name">{serviceBlock.type}</p>
                                 <p className="services__deadlines">{serviceBlock.deadlines}</p>
+                                <button 
+                                className='header__spoiler-btn'
+                                onClick={() => toggleMobileSpoiler(index)}>
+                                Подробнее</button>
                             </div>
 
-                            <div className="services__wrapper-content">
+                            <div className={`services__wrapper-content ${mobileSpoiler[index] ? 'mob__spoiler-opened' : ''}`}>
                                 {serviceBlock.description}
                             </div>
 
                             <div
-                                className="services__wrapper-bottom"
+                                className={`services__wrapper-bottom ${mobileSpoiler[index] ? 'mob__spoiler-opened' : ''}`}
                                 ref={(el) => (contentRefs.current[index] = el)}
                                 style={{
                                     height: getHeight(index),
@@ -64,7 +77,7 @@ const SectionPriceBuild = () => {
                                 ))}
                             </div>
 
-                            <div className="services__wrapper-footer">
+                            <div className={`services__wrapper-footer ${mobileSpoiler[index] ? 'mob__spoiler-opened' : ''}`}>
                                 <div className="spoiler" onClick={() => toggleSpoiler(index)}>
                                     Список работ
                                     <img 

@@ -85,7 +85,6 @@ const Header = () => {
                     >
                         Заказать звонок
                     </button>
-                    <Navbar /> 
                 </div> 
             </div>
             <nav 

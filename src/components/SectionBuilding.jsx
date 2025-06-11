@@ -6,6 +6,8 @@ import weWork3 from '../assets/wework1.svg';
 import weWork4 from '../assets/wework8.svg';
 import bg1 from '../assets/bg1.png';
 
+import close from '../assets/close.svg';
+
 const SectionBulding = () => {
 
     const imgRef = useRef(null);
@@ -23,6 +25,8 @@ const SectionBulding = () => {
     const [repairType, setRepairType] = useState('');
     const [propertyType, setPropertyType] = useState('');
     const [roomCount, setRoomCount] = useState('');
+
+    const [ calcOverlay, setCalcOverley ] = useState(false);
 
     return (
         <section className='section__building'>
@@ -61,8 +65,12 @@ const SectionBulding = () => {
                             <div className="build__item-text">Гарантия 3 года</div>
                         </div>
                     </div>
+                    <button className='calc__btn' onClick={() => setCalcOverley(true)}>Расчитать стоимость</button>
                 </div> 
-                <form className='form__building'>
+                <form className={`form__building ${calcOverlay ? 'form__open' : ''}`} >
+                    <div className="btn__close" onClick={() => setCalcOverley(false)}>
+                        <img src={close} alt="" />
+                    </div>
                 <div className="build__form">
                     <div className="build__form-title">Рассчитайте стоимость ремонта</div>
 
