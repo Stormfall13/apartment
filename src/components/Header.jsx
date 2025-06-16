@@ -1,19 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
-import { openOverlay } from "../store/slices/callOverlaySlice";
 
 import globalHorMenu from './globalHorMenu';
 
-import tel from '../assets/tel.png';
-
-import Navbar from './Navbar';
 import CallOverlay from './CallOverlay';
+import HeaderCallBtn from './HeaderCallBtn';
+import HeaderTel from './HeaderTel';
+import HeaderLogo from './HeaderLogo';
 
 
 
 const Header = () => {
-    const dispatch = useDispatch();
     const headerRef = useRef(null);
     const categoryRef = useRef(null);
     const [isFixed, setIsFixed] = useState(false);
@@ -61,10 +58,7 @@ const Header = () => {
                     maxWidth: `${isFixed ? '1550px' : ''}`
                 }}
                 ref={headerRef}>
-                <Link to="/">
-                    LOGO
-                    {/* <img src="" alt="" /> */}
-                </Link>
+                <HeaderLogo />
                 <nav className="top__menu">
                     {globalHorMenu.map(item => {
                         return (
@@ -73,18 +67,8 @@ const Header = () => {
                     })}
                 </nav>
                 <div className="header__wrapper">
-                    <div className="header__tel">
-                        <div className="icon__tel">
-                            <img src={tel} alt="" />
-                        </div>
-                        <a href="+777777777">+7 (926) 000-00-00</a>
-                    </div>
-                    <button 
-                    className='call__btn' 
-                    onClick={() => dispatch(openOverlay())}
-                    >
-                        Заказать звонок
-                    </button>
+                    <HeaderTel />
+                    <HeaderCallBtn />
                 </div> 
             </div>
             <nav 
