@@ -51,7 +51,7 @@ const Header = () => {
     return (
         <div className="header">
             <div 
-                className={`header__wrapp ${isFixed ? 'fixed' : ''}`}
+                className={`header__wrapp `}
                 style={{
                     position: `${isFixed ? 'fixed' : ''}`,
                     padding: `${isFixed ? '25px 10px' : ''}`,
