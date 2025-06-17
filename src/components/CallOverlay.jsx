@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { closeOverlay } from "../store/slices/callOverlaySlice";
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 import close from '../assets/close.svg';
+
 
 const CallOverlay = () => {
     const dispatch = useDispatch();
@@ -11,18 +12,31 @@ const CallOverlay = () => {
 
     const [nameCall, setNameCall] = useState("");
     const [telCall, setTelCall] = useState("");
+    const [captchaValue, setCaptchaValue] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const recaptchaRef = useRef();
+
+    const KEY_CAPTCHA = process.env.REACT_APP_SITE_KEY_FRONTEND
+    
 
     if (!isOpen) return null;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!captchaValue) {
+            alert("Пожалуйста, подтвердите капчу.");
+            return;
+        }
+
         const callingDate = {
             nameCall,
             telCall,
+            captcha: captchaValue,
         }
         console.log(callingDate);
+        console.log("Заявка с капчей:", callingDate);
 
         setIsSubmitted(true); // Показываем сообщение "С вами свяжутся..."
         
@@ -31,6 +45,8 @@ const CallOverlay = () => {
             dispatch(closeOverlay()); // Закрываем окно через 2 сек
             setNameCall("");
             setTelCall("");
+            setCaptchaValue(null);
+            recaptchaRef.current.reset(); // сброс капчи
         }, 2000);
     } 
 
@@ -57,6 +73,11 @@ const CallOverlay = () => {
                         required 
                         value={telCall}
                         onChange={(e) => setTelCall(e.target.value)}
+                    />
+                    <ReCAPTCHA
+                        sitekey={KEY_CAPTCHA}
+                        onChange={(val) => setCaptchaValue(val)}
+                        ref={recaptchaRef}
                     />
                     <button type='submit' className='call__btn-submit'>Заказать</button>
                 </form> 

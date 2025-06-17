@@ -31,7 +31,6 @@ p{
 
 @media (min-width: 991px) { 
     .building__wrapp-right,
-    .form__building,
     .price__services-wrapp,
     .tabs,
     .gallery__grid,
@@ -41,9 +40,6 @@ p{
     }
     .building__wrapp-right.animate{
         @include anim-style-end();  
-    }
-    .form__building.animate{
-        @include anim-style-end();
     }
     .price__services-wrapp.animate{
         @include anim-style-end();
@@ -425,6 +421,21 @@ p{
     .calc__btn{
         display: none;
     }
+    // .build__form.hidden{
+    //     display: none;
+    // }
+    .building__completed{
+        @include roboto-black();
+        background: var(--bg-black-color);
+        padding: 50px;
+        border-radius: 4px;
+        // display: none;
+        // transition: opacity 0.6s ease-in-out;
+    }
+    // .building__completed.visible{
+    //     display: block;
+    //     opacity: 1; 
+    // }
 }
 
 @media (max-width: 991px) {
@@ -1260,10 +1271,10 @@ p{
     align-items: center;
     background: var(--bg-black-color);
     z-index: 3;
-    padding: 12px 0 0 0;
+    padding: 12px 8px 0 8px;
     .header__logo{
         display: block;
-        max-width: 140px;
+        max-width: 125px;
         width: 100%;
         img{
             width: 100%;
@@ -1292,7 +1303,7 @@ p{
         border: 1px solid var(--main-color);
         background: transparent;
         transition: 0.6s;
-        padding: 12px 22px;
+        padding: 8px 12px;
         border-radius: 3px;
         cursor: pointer;
     }
@@ -1389,6 +1400,7 @@ p{
         width: 100%;
         height: 100vh;
         top: 0;
+        left: 0;
         padding: 20px;
         box-sizing: border-box;
         transform: translate(-120vh);
@@ -1417,3 +1429,37 @@ p{
         opacity: 1;
     }
 }
+
+
+.cookie__banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    .cookie__text{
+        @include roboto-black();
+        color: #111;
+        font-size: 18px;
+    }
+}
+
+.cookie__btn {
+    background: var(--main-color);
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+  

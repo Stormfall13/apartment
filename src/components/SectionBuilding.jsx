@@ -11,6 +11,7 @@ import buildFormData from './buildFormData';
 
 
 const SectionBulding = () => {
+
   const imgRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -22,6 +23,7 @@ const SectionBulding = () => {
   const [area, setArea] = useState('');
   const [phone, setPhone] = useState('');
   const [allPrice, setAllPrice] = useState(0);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     if (imgRef.current && sectionRef.current) {
@@ -55,8 +57,20 @@ const SectionBulding = () => {
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify(payload)
     // });
+    setIsSubmitted(true);
+  
+    setTimeout(() => {
+      setIsSubmitted(false)
+      setRepairType("");
+      setPropertyType("");
+      setRoomCount("");
+      setArea("");
+      setPhone("");
+      setAllPrice(0);
+    }, 2000)
   };
 
+  
   return (
     <section className="section__building">
       <div className="section__build-wrapp" ref={sectionRef}>
@@ -82,7 +96,8 @@ const SectionBulding = () => {
         </div>
 
         {/* Калькулятор */}
-        <form className={`form__building ${calcOverlay ? 'form__open' : ''}`}>
+        {!isSubmitted ? (
+          <div className={`form__building ${calcOverlay ? 'form__open' : ''}`}>
           <div className="btn__close" onClick={() => setCalcOverley(false)}>
             <img src={close} alt="close" />
           </div>
@@ -184,7 +199,13 @@ const SectionBulding = () => {
               </div>
             </div>
           </div>
-        </form>
+        </div>
+        ) : (
+          <div className='building__completed'>
+            Форма отправлена!
+          </div>
+        )}
+        {/* Конец калькулятора */}
       </div>
     </section>
   );

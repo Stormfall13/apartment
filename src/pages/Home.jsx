@@ -31,8 +31,7 @@ const useScrollAnimationAndHoverEffects = () => {
       });
   
       const elementsToAnimate = document.querySelectorAll(`
-        .building__wrapp-right, 
-        .form__building, 
+        .building__wrapp-right,  
         .price__services-wrapp,
         .tabs,
         .gallery__grid,
