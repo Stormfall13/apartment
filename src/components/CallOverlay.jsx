@@ -50,6 +50,8 @@ const CallOverlay = () => {
         }, 2000);
     } 
 
+    const agreementText = 'Ознакомлен(на) с пользовательским соглашением'
+
     return (
         <div className="call__overlay">
             <div className={`form__wrapp ${isSubmitted ? "hidden" : ""}`}>
@@ -74,6 +76,10 @@ const CallOverlay = () => {
                         value={telCall}
                         onChange={(e) => setTelCall(e.target.value)}
                     />
+                    <div className="agreement">
+                        <input type="checkbox" required value={agreementText}/>
+                        <p>Ознакомлен(на) с <a href="/agreement" target='_blank'>пользовательским соглашением</a></p>
+                    </div>
                     <ReCAPTCHA
                         sitekey={KEY_CAPTCHA}
                         onChange={(val) => setCaptchaValue(val)}

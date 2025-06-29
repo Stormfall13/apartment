@@ -90,7 +90,6 @@ p {
   }
 }
 .header {
-  padding: 0 10px 25px 0;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -173,6 +172,7 @@ p {
   justify-content: space-between;
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
+  display: none;
 }
 .header .category__menu a {
   font-family: var(--roboto-font);
@@ -261,6 +261,22 @@ p {
   font-size: 14px;
   color: var(--text-brown-color);
   color: #111;
+}
+.header .call__overlay .form__wrapp form .agreement {
+  display: flex;
+}
+.header .call__overlay .form__wrapp form .agreement p {
+  font-family: var(--roboto-font);
+  color: var(--text-black-color);
+  font-size: 16px;
+  font-weight: var(--bold);
+}
+.header .call__overlay .form__wrapp form .agreement p a {
+  font-family: var(--roboto-font);
+  color: var(--text-black-color);
+  font-size: 16px;
+  font-weight: var(--bold);
+  text-decoration: underline;
 }
 .header .call__overlay .form__wrapp .call__btn-submit {
   font-family: var(--roboto-font);
