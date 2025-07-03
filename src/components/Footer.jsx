@@ -1,10 +1,10 @@
-import React from 'react';
+
 
 import globalHorMenu from './globalHorMenu';
 
-import vk from '../assets/vkontakte.svg';
 import tg from '../assets/telegram.svg';
 import whatsapp from '../assets/whatsapp.svg';
+import mail from '../assets/mail.png';
 
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
     const dataSocialLink = [
         {
             id: 1,
-            imgSocial: vk,
+            imgSocial: mail,
             linkSocial: '#',
         },
         {

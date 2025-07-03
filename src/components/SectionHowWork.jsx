@@ -19,7 +19,7 @@ const SectionHowWork = () => {
         {
             id: 1,
             workItemsImg: wework1,
-            workItemsText: 'Бесплатный выезд замерщиков',
+            workItemsText: 'Выезд замерщиков',
         },
         {
             id: 2,

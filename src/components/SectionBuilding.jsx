@@ -70,6 +70,7 @@ const SectionBulding = () => {
     }, 2000)
   };
 
+  const agreementText = 'Ознакомлен(на) с пользовательским соглашением'
   
   return (
     <section className="section__building">
@@ -78,16 +79,16 @@ const SectionBulding = () => {
           <img src={bg1} alt="background-main" ref={imgRef} />
         </div>
         <div className="building__wrapp-right">
-          <h1 className="page__title">РЕМОНТ КВАРТИР В МОСКВЕ И МО</h1>
+          <h1 className="page__title">Ремонт квартир, домов, коммерческих помещений в Санкт-Петербурге и ЛО</h1>
           <div className="build__price-wrapp">
             от <div className="build__price">2450</div> руб/м²
           </div>
           <div className="build__wrapper-item">
             {[weWork1, weWork2, weWork3, weWork4].map((icon, i) => (
               <div className="build__item" key={i}>
-                <div className="build__item-icon"><img src={icon} alt="" /></div>
+                <div className="build__item-icon"><img src={icon} alt="ico" /></div>
                 <div className="build__item-text">
-                  {["Оплата по факту", "Замер и составление сметы БЕСПЛАТНО", "Выезд сметчика", "Гарантия 3 года"][i]}
+                  {["Оплата по факту", "Замер и составление сметы", "Выезд сметчика", "Гарантия 3 года"][i]}
                 </div>
               </div>
             ))}
@@ -97,7 +98,7 @@ const SectionBulding = () => {
 
         {/* Калькулятор */}
         {!isSubmitted ? (
-          <div className={`form__building ${calcOverlay ? 'form__open' : ''}`}>
+          <form className={`form__building ${calcOverlay ? 'form__open' : ''}`}>
           <div className="btn__close" onClick={() => setCalcOverley(false)}>
             <img src={close} alt="close" />
           </div>
@@ -187,6 +188,10 @@ const SectionBulding = () => {
               <div className="tel__area">
                 <div className="tel__title">Введите номер телефона:</div>
               </div>
+              <div className="agreement">
+                  <input type="checkbox" required value={agreementText}/>
+                  <p>Ознакомлен(на) с <a href="/agreement" target='_blank'>пользовательским соглашением</a></p>
+              </div>
               <div className="tel__wrapp">
                 <input
                   type="text"
@@ -199,7 +204,7 @@ const SectionBulding = () => {
               </div>
             </div>
           </div>
-        </div>
+        </form>
         ) : (
           <div className='building__completed'>
             Форма отправлена!

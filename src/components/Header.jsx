@@ -78,9 +78,8 @@ const Header = () => {
                     marginTop: isFixed ? `${headerHeight}px` : '0px',
                 }}>
                 <Link to="#">Ремонт квартир</Link>
-                <Link to="#">Дизайн интерьера</Link>
-                <Link to="#">Ремонт комнат</Link>
                 <Link to="#">Дома и коттеджи</Link>
+                <Link to="#">Коммерческие помещения</Link>
                 <Link to="#">Прочие услуги</Link>
             </nav>
             <CallOverlay />

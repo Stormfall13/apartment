@@ -90,6 +90,36 @@ p{
             font-weight: var(--bold);
         }
     }
+    .contact__wrapp{
+        .mail__social{
+            display: flex;
+            align-items: center;
+            .mail__link{
+                    font-family: var(--roboto-font);
+                    color: var(--text-black-color);
+                    font-weight: var(--bold); 
+                    text-decoration: underline;
+            }
+            .social__wrapp{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                max-width: 200px;
+                .link__social{
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    padding: 5px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        filter: invert(1);
+                    }
+                }
+            } 
+        }
+    }
     .top__menu{
         max-width: 600px;
         width: 100%;
@@ -274,9 +304,10 @@ p{
         max-width: 563px;
         .page__title{
             @include roboto-black();
-            font-size: 60px;
+            font-size: 44px;
             font-weight: var(--bold);
             color: #111;
+            margin: 15px 0;
         }
         .build__price-wrapp{
             @include roboto-black();
@@ -401,6 +432,26 @@ p{
                 font-weight: var(--bold);
             }
         }
+        .agreement{
+            display: flex;
+            input{
+                width: 13px;
+                height: 13px;
+            }
+            p{
+                font-family: var(--roboto-font);
+                color: var(--text-black-color);
+                font-size: 16px;
+                font-weight: var(--bold);
+                a{
+                    font-family: var(--roboto-font);
+                    color: var(--text-black-color);
+                    font-size: 16px;
+                    font-weight: var(--bold); 
+                    text-decoration: underline;
+                }
+            }
+        }  
     }
     .build__select{
         display: flex;
@@ -1162,7 +1213,11 @@ p{
         justify-content: space-between;
     }
     &__wrapper{
-        max-width: 285px;
+        // max-width: 285px;
+        flex: 0 0 48%;
+        display: flex;
+        gap: 17px;
+        align-items: center;
     }
     &__img{
         width: 36px;
@@ -1179,7 +1234,7 @@ p{
         @include roboto-black();
         font-size: 18px;
         font-weight: var(--bold);
-        margin: 0 0 30px 0;
+        // margin: 0 0 30px 0;
     }
     &__text{
         @include roboto-black();

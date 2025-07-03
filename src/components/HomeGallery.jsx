@@ -65,7 +65,7 @@ const HomeGallery = () => {
 
     return (
     <section className='home__gallery' id='home__gallery'>
-        <h2 className='gallery__title'>Галерея</h2>
+        <h2 className='gallery__title'>Галерея выполненных работ</h2>
 
         <div className='gallery__grid'>
             {dataGallery.map((item) => {
