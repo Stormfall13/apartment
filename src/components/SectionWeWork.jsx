@@ -1,103 +1,76 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-
-import dollarSign from '../assets/dollar-sign.svg';
-import grid from '../assets/grid.svg';
-import calendar from '../assets/calendar.svg';
-import home from '../assets/home.svg';
-import mapPin from '../assets/map-pin.svg';
-import fileText from '../assets/file-text.svg';
-
-import tabData from './tabData';
+import projectsData from './projectsData';
+import close from '../assets/close.svg';
 
 const SectionWeWork = () => {
 
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [currentImage, setCurrentImage] = useState("");
 
-
-    const [activeTab, setActiveTab] = useState(0);
-    const [selectedAreaIndex, setSelectedAreaIndex] = useState(0);
-    const [mainImage, setMainImage] = useState( tabData[0].options[0].mainImage );
-
-    const handleAreaChange = (index) => {
-        setSelectedAreaIndex(index);
-        setMainImage(tabData[activeTab].options[index].mainImage);
+    const openModal = (project) => {
+        setSelectedProject(project);
+        setCurrentImage(project.mainImage);
     };
 
-    const handleThumbnailClick = (img) => {
-        setMainImage(img);
+    const closeModal = () => {
+        setSelectedProject(null);
+        setCurrentImage("");
     };
-
-    const currentTab = tabData[activeTab];
-    const currentOption = currentTab.options[selectedAreaIndex];
-
 
     return (
         <section className='section__wework' id="section__wework">
-        <h2 className='title__wework'>Наши проекты</h2>
-
-        <div className="tabs">
-        <div className="tab__titles">
-            {tabData.map((tab, index) => (
-            <button
-                key={index}
-                className={`tab__btn ${activeTab === index ? 'active' : ''}`}
-                onClick={() => {
-                setActiveTab(index);
-                setSelectedAreaIndex(0);
-                setMainImage(tab.options[0].mainImage);
-                }}
-            >
-                {tab.title}
-            </button>
-            ))}
-        </div>
-
-        <div className="area__selector">
-            {currentTab.options.map((option, index) => (
-            <label key={option.id}>
-                <input
-                type="radio"
-                name="area"
-                checked={selectedAreaIndex === index}
-                onChange={() => handleAreaChange(index)}
-                />
-                {option.area}
-            </label>
-            ))}
-        </div>
-
-        <div className="tab__content">
-            <div className="content__wrapp">
-                <div className="thumbnails">
-                    {currentOption.thumbnails.map((thumb, i) => (
-                    <img
-                        key={i}
-                        src={thumb}
-                        alt="thumbnail"
-                        onClick={() => handleThumbnailClick(thumb)}
-                        className={`thumb ${mainImage === thumb ? 'active' : ''}`}
-                    />
-                    ))}
-                </div>
-
-                <div className="wrapper__content">
-                    <div className="main__image">
-                        <img src={mainImage} alt="main" />
+            <h2 className='title__wework'>Наши проекты</h2>
+            
+            <div className="projects-grid">
+                {projectsData.map((project) => (
+                <div className="project__card" key={project.id}>
+                    <div className="project__img">
+                        <img
+                        src={project.mainImage}
+                        alt={project.title}
+                        onClick={() => openModal(project)}
+                        className="project-image"
+                        />
                     </div>
-
-                    <div className="description">
-                        <p><span><img src={dollarSign} alt="dollar-sign" /><strong>Сумма:</strong></span> {currentOption.description.price}</p>
-                        <p><span><img src={grid} alt="grid" /><strong>Площадь:</strong></span> {currentOption.description.area}</p>
-                        <p><span><img src={calendar} alt="calendar" /><strong>Срок:</strong></span> {currentOption.description.time}</p>
-                        <p><span><img src={home} alt="home" /><strong>Комнат:</strong></span> {currentOption.description.rooms}</p>
-                        <p><span><img src={mapPin} alt="main-pin" /><strong>Адрес:</strong></span> {currentOption.description.address}</p>
-                        <p><span><img src={fileText} alt="file-text" /><strong>Перечень работ:</strong></span> {currentOption.description.workList}</p>
-                    </div> 
+                    <div className="project__descript">
+                        <h3>{project.title}</h3>
+                        <p onClick={() => openModal(project)}>{project.description}</p>
+                        <a href={project.pdf} download className="download-button">
+                        Скачать проект
+                        </a>
+                    </div>
                 </div>
+                ))}
             </div>
-        </div>
-        </div>
-    </section>
+
+            {selectedProject && (
+                <div className="modal__overlay" onClick={closeModal}>
+                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <h3>{selectedProject.title}</h3>
+                    <div className="main__image">
+                        <img src={currentImage} alt="Текущее фото" className="main-modal-image" />
+                    </div>
+                    <div className="thumbnail-row">
+                    {selectedProject.gallery.map((img, index) => (
+                        <div className="thumbnail__items" key={index}>
+                            <img
+                                src={img}
+                                className={`thumbnail ${currentImage === img ? 'active' : ''}`}
+                                onClick={() => setCurrentImage(img)}
+                                alt="миниатюра"
+                            /> 
+                        </div>
+                    ))}
+                    </div>
+                    <button onClick={closeModal} className="close-button">
+                        <img src={close} alt="close" />
+                    </button>
+                </div>
+                </div>
+            )}
+            
+        </section>
     )
 }
 
