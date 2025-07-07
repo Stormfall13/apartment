@@ -1244,6 +1244,12 @@ p{
             flex: none;
             max-width: 340px;
         }
+        &__title-text{
+            @include roboto-black();
+            font-size: 15px;
+            font-weight: var(--bold);
+            max-width: 260px;
+        }
     }
     .advantage__title-text{
         margin: 0 0 15px 0;

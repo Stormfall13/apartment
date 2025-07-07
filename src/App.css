@@ -1416,6 +1416,13 @@ p {
     max-width: 340px;
   }
   .advantage__title-text {
+    font-family: var(--roboto-font);
+    color: var(--text-black-color);
+    font-size: 15px;
+    font-weight: var(--bold);
+    max-width: 260px;
+  }
+  .advantage__title-text {
     margin: 0 0 15px 0;
   }
 }
